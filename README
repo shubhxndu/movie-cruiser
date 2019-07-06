@@ -1,6 +1,6 @@
 This is a simple Web App that is built using Angular and Spring Boot. The backend services are deployed as per micro services architecture.
 JWT is implemented for security, Swagger is implemented for documentation. This app is also deployable from Docker.
-The web app was built by Shubhendu Mishra as part of the Stackroute Full Stack Web Developer Certification
+The app(backend and frontend) was built by Shubhendu Mishra as part of the Stackroute Full Stack Web Developer Certification
 
 Steps to run MovieCruiser from Docker
 
@@ -10,11 +10,11 @@ The application will be up and running at`http://localhost:4200` or `http://<you
 
 Steps to run MovieCruiser locally.
 
-1. Clone the project using `git clone https://gitlab-cts.stackroute.in/Shubhendu.Mishra/moviecruiserserverapplication.git`
-2. Navigate to `moviecruiser/frontend` foler
+1. Clone the project using `git clone https://github.com/shubhendu-mishra/movie-cruiser.git`
+2. Navigate to `movie-cruiser/frontend` foler
 3. Run `npm install`
 4. Run `ng build --prod`
-5. Navigate to `moviecruiser/frontend/dist` folder and move contents of `moviecruiserfrontend` folder to its parent. Delete the empty folder.
+5. Navigate to `movie-cruiser/frontend/dist` folder and move contents of `moviecruiserfrontend` folder to its parent. Delete the empty folder.
 6. Navigate to root folder and run `source ./build.sh`
 7. Run `docker-compose up --build`
 
