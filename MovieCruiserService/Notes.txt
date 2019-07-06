@@ -1,0 +1,13 @@
+1. Pure Rest Service
+- Uniform Interface
+- Client- Server
+- Stateless
+- Cacheable
+- Layered System
+- Code On Demand
+
+
+
+Q. why is transient added
+. where to add native queries
+can we use multiple repositories in same service or should we call service

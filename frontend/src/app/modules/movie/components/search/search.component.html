@@ -1,0 +1,11 @@
+<div class="flex-container">
+<form class="example-form">
+  <mat-form-field>
+    <input id='search-button-input' matInput type="text" #box (keyup.enter) = "onEnter(box.value)">
+    <mat-placeholder>Search</mat-placeholder>
+  </mat-form-field>
+</form>
+
+<movie-container [movies]="movies"></movie-container>
+
+</div>

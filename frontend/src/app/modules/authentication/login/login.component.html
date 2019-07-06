@@ -1,0 +1,20 @@
+<form class="login-form" #loginForm="ngForm" [style.fontSize.px]="20">
+  <div class="login-block">
+    <div class="row">
+      <mat-form-field class="login-input-full-width">
+        <input matInput placeholder="User Id" [(ngModel)]="newUser.userId" name="userId" id="userId" required minlength="5" maxlength="10"
+          #userId="ngModel" class="inputId">
+        <mat-error *ngIf="userId.invalid">User Id: must be minimum 5 and 10 characters long</mat-error>
+      </mat-form-field>
+      <mat-form-field class="login-input-full-width">
+        <input matInput placeholder="Password" type="password" [(ngModel)]="newUser.password" name="password" id="password" required
+          #password="ngModel" class="inputPass">
+        <mat-error *ngIf="password.invalid">Password is mandatory</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <button class="login-user" type="submit" mat-raised-button (click)="loginUser()" color="primary" >Login</button>
+      <button class="register-button" mat-raised-button [routerLink]="['/register']" color="primary" >Register</button>
+    </div>
+  </div>
+</form>

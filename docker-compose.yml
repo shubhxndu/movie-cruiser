@@ -1,0 +1,44 @@
+version: '3.2'
+services:
+  authservice:
+   image: authenticationservice
+   build: AuthenticationService/
+   restart: always
+   network_mode: host
+   ports:
+     - 8082:8082
+   expose:
+     - 8082
+   depends_on:
+     - movie-mysql
+  movieservice:
+   image: movieservice
+   build: MovieCruiserService/
+   restart: always
+   network_mode: host
+   ports:
+     - 8080:8080
+   expose:
+     - 8080
+   depends_on:
+     - movie-mysql
+
+  movie-mysql:
+   image: mysql:5.5
+   network_mode: host
+   ports:
+     - 3306:3306
+   environment:
+     MYSQL_ROOT_PASSWORD: root
+     MYSQL_DATABASE: moviedb
+     MYSQL_USER: app_root
+     MYSQL_PASSWORD: root123
+   volumes:
+     - /opt/movie/mysqldb:/var/lib/mysql
+  moviecruiserfrontend:
+    image: moviefrontend
+    build: frontend
+    network_mode: host
+    container_name: frontend
+    ports:
+      - 4200:4200
